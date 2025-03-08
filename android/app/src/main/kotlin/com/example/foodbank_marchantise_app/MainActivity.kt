@@ -1,4 +1,4 @@
-package com.inilabs.foodbank.marchantise
+package com.jaggus.vendor
 
 import io.flutter.embedding.android.FlutterActivity
 

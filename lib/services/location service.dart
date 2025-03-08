@@ -89,8 +89,7 @@ class _LocationTrackingState extends State<LocationTracking> {
     var result = await polylinePoints!.getRouteBetweenCoordinates(
       //api key
       GoogleMapApi().url,
-      PointLatLng(
-          currentLocation!.latitude ?? 0.0, currentLocation!.longitude ?? 0.0),
+      PointLatLng(currentLocation!.latitude ?? 0.0, currentLocation!.longitude ?? 0.0),
 
       PointLatLng(destinationLatlng.latitude, destinationLatlng.longitude),
     );

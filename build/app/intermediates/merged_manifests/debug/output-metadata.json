@@ -4,7 +4,7 @@
     "type": "MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.inilabs.foodbank.marchantise",
+  "applicationId": "com.jaggus.vendor",
   "variantName": "debug",
   "elements": [
     {

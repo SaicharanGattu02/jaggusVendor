@@ -29,8 +29,7 @@ class _Home_PageState extends State<Home_Page> {
     order_Controller.onInit();
 
     if (mounted) {
-      FirebaseMessaging.instance
-          .getInitialMessage()
+      FirebaseMessaging.instance.getInitialMessage()
           .then((RemoteMessage? message) {});
       FirebaseMessaging.onMessage.listen((RemoteMessage message) {
         order_Controller.onInit();

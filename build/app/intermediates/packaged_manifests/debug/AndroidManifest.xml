@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.inilabs.foodbank.marchantise"
+    package="com.jaggus.vendor"
     android:versionCode="9"
     android:versionName="2.2.7" >
 
@@ -17,8 +17,8 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Permissions options for the `notification` group -->
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <uses-feature
@@ -37,18 +37,18 @@
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
 
     <permission
-        android:name="com.inilabs.foodbank.marchantise.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.jaggus.vendor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.inilabs.foodbank.marchantise.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.jaggus.vendor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/launcher_icon"
-        android:label="FoodBank Merchant" >
+        android:label="Jaggus Vendor" >
         <activity
-            android:name="com.inilabs.foodbank.marchantise.MainActivity"
+            android:name="com.jaggus.vendor.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:exported="true"
             android:hardwareAccelerated="true"
@@ -162,12 +162,12 @@
 
         <provider
             android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
-            android:authorities="com.inilabs.foodbank.marchantise.flutterfirebasemessaginginitprovider"
+            android:authorities="com.jaggus.vendor.flutterfirebasemessaginginitprovider"
             android:exported="false"
             android:initOrder="99" />
         <provider
             android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-            android:authorities="com.inilabs.foodbank.marchantise.flutter.image_provider"
+            android:authorities="com.jaggus.vendor.flutter.image_provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -236,7 +236,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.inilabs.foodbank.marchantise.firebaseinitprovider"
+            android:authorities="com.jaggus.vendor.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
@@ -274,7 +274,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.inilabs.foodbank.marchantise.androidx-startup"
+            android:authorities="com.jaggus.vendor.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"

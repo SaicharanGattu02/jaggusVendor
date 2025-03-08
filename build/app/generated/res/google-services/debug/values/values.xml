@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="default_web_client_id" translatable="false">874879259832-2bksqf4l567sgvambdiiateeh5dtjt41.apps.googleusercontent.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">874879259832</string>
-    <string name="google_api_key" translatable="false">AIzaSyDabqHsfe0B3ObWyAuy4gPmi8hvnb-JZHA</string>
-    <string name="google_app_id" translatable="false">1:874879259832:android:cf5f3eb71846749233904d</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDabqHsfe0B3ObWyAuy4gPmi8hvnb-JZHA</string>
-    <string name="google_storage_bucket" translatable="false">new-project-3e70e.appspot.com</string>
-    <string name="project_id" translatable="false">new-project-3e70e</string>
+    <string name="gcm_defaultSenderId" translatable="false">372763361851</string>
+    <string name="google_api_key" translatable="false">AIzaSyAZt4wR39K1UBFsbVTUU6sl3rGjmQp1s6o</string>
+    <string name="google_app_id" translatable="false">1:372763361851:android:496981a55af05fda58921e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAZt4wR39K1UBFsbVTUU6sl3rGjmQp1s6o</string>
+    <string name="google_storage_bucket" translatable="false">jaggus-2fabd.firebasestorage.app</string>
+    <string name="project_id" translatable="false">jaggus-2fabd</string>
 </resources>

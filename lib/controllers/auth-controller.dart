@@ -48,7 +48,6 @@ class AuthController extends GetxController {
     if (email_validator == null && pass_validator == null) {
       Map body = {'email': email, 'password': pass};
       String jsonBody = json.encode(body);
-
       server
           .postRequest(endPoint: APIList.login, body: jsonBody)
           .then((response) {

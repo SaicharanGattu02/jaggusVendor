@@ -296,7 +296,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         ),
                         TextFormField(
                           controller: profile.addressController
-                            ..text = profile.address!
+                            ..text = profile.address??""
                             ..selection = TextSelection.collapsed(
                                 offset: profile.addressController.text.length),
                           obscureText: false,

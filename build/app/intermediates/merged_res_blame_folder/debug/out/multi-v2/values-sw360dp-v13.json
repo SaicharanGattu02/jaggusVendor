@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.inilabs.foodbank.marchantise.app-mergeDebugResources-52:/values-sw360dp-v13/values-sw360dp-v13.xml",
+            "outputFile": "com.jaggus.vendor.app-mergeDebugResources-53:/values-sw360dp-v13/values-sw360dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Chara\\.gradle\\caches\\transforms-3\\68d929bd1a7000ee701417de38975f4d\\transformed\\preference-1.2.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "source": "C:\\Users\\muluk\\.gradle\\caches\\transforms-3\\68d929bd1a7000ee701417de38975f4d\\transformed\\preference-1.2.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
