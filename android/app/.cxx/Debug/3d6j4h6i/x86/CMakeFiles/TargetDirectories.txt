@@ -1,0 +1,2 @@
+C:/Users/Chara/studioProjects/foodbank-merchant-app/foodbank-merchant-app/android/app/.cxx/Debug/3d6j4h6i/x86/CMakeFiles/edit_cache.dir
+C:/Users/Chara/studioProjects/foodbank-merchant-app/foodbank-merchant-app/android/app/.cxx/Debug/3d6j4h6i/x86/CMakeFiles/rebuild_cache.dir

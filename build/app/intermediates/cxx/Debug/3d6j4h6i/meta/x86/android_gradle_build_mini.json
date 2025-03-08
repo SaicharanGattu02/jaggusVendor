@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "C:\\flutter_setup\\flutter\\packages\\flutter_tools\\gradle\\src\\main\\groovy\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\Chara\\AppData\\Local\\Android\\sdk\\cmake\\3.18.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\Chara\\studioProjects\\foodbank-merchant-app\\foodbank-merchant-app\\android\\app\\.cxx\\Debug\\3d6j4h6i\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\Chara\\AppData\\Local\\Android\\sdk\\cmake\\3.18.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\Chara\\studioProjects\\foodbank-merchant-app\\foodbank-merchant-app\\android\\app\\.cxx\\Debug\\3d6j4h6i\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}
