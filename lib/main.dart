@@ -76,7 +76,7 @@ void main() async {
       ?.createNotificationChannel(channelAudio);
 
   const InitializationSettings initializationSettings = InitializationSettings(
-      android: AndroidInitializationSettings('@mipmap/launcher_icon'),
+      android: AndroidInitializationSettings('@mipmap/ic_launcher'),
       iOS: DarwinInitializationSettings());
 
   flutterLocalNotificationsPlugin.initialize(
@@ -140,7 +140,7 @@ void showNotification(RemoteNotification notification,
     importance: Importance.max,
     priority: Priority.high,
     playSound: false,
-    icon: '@mipmap/launcher_icon',
+    icon: '@mipmap/ic_launcher',
   );
   NotificationDetails platformChannelSpecifics =
   NotificationDetails(android: androidPlatformChannelSpecifics);
@@ -177,7 +177,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
       priority: Priority.high,
       playSound: true,
       sound: RawResourceAndroidNotificationSound('jaggus_tone'),
-      icon: '@mipmap/launcher_icon',
+      icon: '@mipmap/ic_launcher',
     );
 
     NotificationDetails platformChannelSpecifics =
