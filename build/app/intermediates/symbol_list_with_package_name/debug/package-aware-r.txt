@@ -1169,6 +1169,7 @@ layout toast_custom
 mipmap ic_launcher
 mipmap launcher_icon
 raw firebase_common_keep
+raw jaggus_tone
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

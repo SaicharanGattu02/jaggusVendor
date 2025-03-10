@@ -84,10 +84,10 @@
 46        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 46-->[androidx.core:core:1.13.1] C:\Users\muluk\.gradle\caches\transforms-3\44822452ad76d134b153967a60b15f93\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 47        android:debuggable="true"
-48        android:icon="@mipmap/launcher_icon"
-48-->C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:13:9-45
-49        android:label="Jaggus Vendor" >
-49-->C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:12:9-38
+48        android:icon="@mipmap/ic_launcher"
+48-->C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:13:9-43
+49        android:label="Jaggu&apos;s Vendor" >
+49-->C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:12:9-39
 50        <activity
 50-->C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:14:9-47:20
 51            android:name="com.jaggus.vendor.MainActivity"

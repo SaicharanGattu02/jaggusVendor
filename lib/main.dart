@@ -21,30 +21,14 @@ import 'firebase_options.dart';
 final box = GetStorage();
 dynamic langValue = const Locale('en', null);
 
-// const AndroidNotificationChannel channel = AndroidNotificationChannel(
-//     'jaggus_channel_id',
-//     'jaggus_channel_name',
-//     description: 'This channel is used for important notifications.',
-//     importance: Importance.high,
-//     playSound: false);
-
-// channel for default notifications
-const AndroidNotificationChannel channel = AndroidNotificationChannel(
-  'wave_remote_notifications', // id
-  'Wave messages and updates', // title
-  description: 'Primary channel for notifications and messages in wave app',
-  importance: Importance.max,
-);
-
-// channel for custom sound
 const AndroidNotificationChannel channelAudio = AndroidNotificationChannel(
   'wave_remote_notifications_priority', // id
   'Wave messages and updates on priority', // title
   description: 'Primary channel for notifications and messages in wave app',
-  sound: RawResourceAndroidNotificationSound('mario'),
   importance: Importance.max,
+  playSound: true,
+  sound: RawResourceAndroidNotificationSound('jaggus_tone'), // No extension
 );
-
 
 final AudioPlayer audioPlayer = AudioPlayer();
 
@@ -89,11 +73,6 @@ void main() async {
   await flutterLocalNotificationsPlugin
       .resolvePlatformSpecificImplementation<
       AndroidFlutterLocalNotificationsPlugin>()
-      ?.createNotificationChannel(channel);
-
-  await flutterLocalNotificationsPlugin
-      .resolvePlatformSpecificImplementation<
-      AndroidFlutterLocalNotificationsPlugin>()
       ?.createNotificationChannel(channelAudio);
 
   const InitializationSettings initializationSettings = InitializationSettings(
@@ -110,6 +89,11 @@ void main() async {
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
     RemoteNotification? notification = message.notification;
     AndroidNotification? android = message.notification?.android;
+    print("🔔 Background/Killed Notification Received!");
+    print("🔹 Title: ${message.notification?.title}");
+    print("🔹 Body: ${message.notification?.body}");
+    print("🔹 Data: ${message.data}");
+    print("🔹 Full Payload: ${message.toMap()}");
     if (notification != null && android != null) {
       print('A new message received title: ${notification.title}');
       print('A new message received body: ${notification.body}');
@@ -148,8 +132,7 @@ void main() async {
 // Function to display local notifications
 void showNotification(RemoteNotification notification,
     AndroidNotification android, Map<String, dynamic> data) async {
-  await audioPlayer
-      .play(AssetSource('sounds/jaggus_tone.mp3')); // Corrected line
+  await audioPlayer.play(AssetSource('sounds/jaggus_tone.mp3')); // Corrected line
   AndroidNotificationDetails androidPlatformChannelSpecifics =
   AndroidNotificationDetails(
     'jaggus_channel_id',
@@ -173,23 +156,23 @@ void showNotification(RemoteNotification notification,
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
+  print("🔔 Background/Killed Notification Received!");
+  print("🔹 Title: ${message.notification?.title}");
+  print("🔹 Body: ${message.notification?.body}");
+  print("🔹 Data: ${message.data}");
+  print("🔹 Full Payload: ${message.toMap()}");
   print("Handling background message: ${message.messageId}");
 
   RemoteNotification? notification = message.notification;
   AndroidNotification? android = message.notification?.android;
 
   if (notification != null && android != null) {
-    print('Background Message received: ${notification.title}');
+    print('Background/Killed Message received: ${notification.title}');
 
-    // Play custom sound manually
-    final AudioPlayer audioPlayer = AudioPlayer();
-    await audioPlayer.play(AssetSource('sounds/jaggus_tone.mp3'));
-
-    // Create notification with custom sound
     AndroidNotificationDetails androidPlatformChannelSpecifics =
     AndroidNotificationDetails(
-      'jaggus_channel_id',
-      'jaggus_channel_name',
+      'wave_remote_notifications_priority', // Ensure it matches the channel ID
+      'Wave messages and updates on priority',
       importance: Importance.max,
       priority: Priority.high,
       playSound: true,
@@ -200,8 +183,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
     NotificationDetails platformChannelSpecifics =
     NotificationDetails(android: androidPlatformChannelSpecifics);
 
-    FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-    FlutterLocalNotificationsPlugin();
+    FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
     await flutterLocalNotificationsPlugin.show(
       notification.hashCode,
       notification.title,
@@ -225,7 +207,7 @@ class FoodEx extends StatelessWidget {
         locale: langValue,
         translations: Languages(),
         debugShowCheckedModeBanner: false,
-        title: 'Jaggus Vendor',
+        title: "Jaggu's Vendor",
         theme: ThemeData(useMaterial3: false),
         home: Authentication(),
       ),

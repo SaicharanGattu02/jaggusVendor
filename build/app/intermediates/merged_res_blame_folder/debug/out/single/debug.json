@@ -1,67 +1,91 @@
 [
     {
-        "merged": "com.jaggus.vendor.app-merged_res-55:/drawable-v21_launch_background.xml.flat",
-        "source": "com.jaggus.vendor.app-main-48:/drawable-v21/launch_background.xml"
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\mipmap-mdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\mipmap-mdpi\\launcher_icon.png"
     },
     {
-        "merged": "com.jaggus.vendor.app-merged_res-55:/drawable-mdpi_splash.png.flat",
-        "source": "com.jaggus.vendor.app-main-48:/drawable-mdpi/splash.png"
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\drawable-hdpi_splash.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\drawable-hdpi\\splash.png"
     },
     {
         "merged": "com.jaggus.vendor.app-merged_res-55:/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "com.jaggus.vendor.app-main-48:/mipmap-xhdpi/ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\mipmap-hdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\mipmap-hdpi\\launcher_icon.png"
+    },
+    {
         "merged": "com.jaggus.vendor.app-merged_res-55:/mipmap-hdpi_ic_launcher.png.flat",
         "source": "com.jaggus.vendor.app-main-48:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.jaggus.vendor.app-merged_res-55:/mipmap-mdpi_launcher_icon.png.flat",
-        "source": "com.jaggus.vendor.app-main-48:/mipmap-mdpi/launcher_icon.png"
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.jaggus.vendor.app-merged_res-55:/mipmap-hdpi_launcher_icon.png.flat",
-        "source": "com.jaggus.vendor.app-main-48:/mipmap-hdpi/launcher_icon.png"
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\raw_jaggus_tone.mp3.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\raw\\jaggus_tone.mp3"
     },
     {
-        "merged": "com.jaggus.vendor.app-merged_res-55:/drawable-hdpi_splash.png.flat",
-        "source": "com.jaggus.vendor.app-main-48:/drawable-hdpi/splash.png"
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\drawable-xxhdpi_splash.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\drawable-xxhdpi\\splash.png"
     },
     {
         "merged": "com.jaggus.vendor.app-merged_res-55:/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "com.jaggus.vendor.app-main-48:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.jaggus.vendor.app-merged_res-55:/drawable-v21_background.png.flat",
-        "source": "com.jaggus.vendor.app-main-48:/drawable-v21/background.png"
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\drawable-xxxhdpi_splash.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\drawable-xxxhdpi\\splash.png"
     },
     {
         "merged": "com.jaggus.vendor.app-merged_res-55:/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "com.jaggus.vendor.app-main-48:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.jaggus.vendor.app-merged_res-55:/mipmap-xhdpi_launcher_icon.png.flat",
-        "source": "com.jaggus.vendor.app-main-48:/mipmap-xhdpi/launcher_icon.png"
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\mipmap-xxxhdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\mipmap-xxxhdpi\\launcher_icon.png"
     },
     {
-        "merged": "com.jaggus.vendor.app-merged_res-55:/drawable-xxhdpi_splash.png.flat",
-        "source": "com.jaggus.vendor.app-main-48:/drawable-xxhdpi/splash.png"
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.jaggus.vendor.app-merged_res-55:/mipmap-xxxhdpi_launcher_icon.png.flat",
-        "source": "com.jaggus.vendor.app-main-48:/mipmap-xxxhdpi/launcher_icon.png"
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\drawable-v21_background.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\drawable-v21\\background.png"
     },
     {
-        "merged": "com.jaggus.vendor.app-merged_res-55:/drawable-xxxhdpi_splash.png.flat",
-        "source": "com.jaggus.vendor.app-main-48:/drawable-xxxhdpi/splash.png"
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\mipmap-xhdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\mipmap-xhdpi\\launcher_icon.png"
     },
     {
-        "merged": "com.jaggus.vendor.app-merged_res-55:/mipmap-xxhdpi_launcher_icon.png.flat",
-        "source": "com.jaggus.vendor.app-main-48:/mipmap-xxhdpi/launcher_icon.png"
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\drawable-v21_launch_background.xml.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\drawable-v21\\launch_background.xml"
     },
     {
-        "merged": "com.jaggus.vendor.app-merged_res-55:/drawable-xhdpi_splash.png.flat",
-        "source": "com.jaggus.vendor.app-main-48:/drawable-xhdpi/splash.png"
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\mipmap-xxhdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\mipmap-xxhdpi\\launcher_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\drawable-mdpi_splash.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\drawable-mdpi\\splash.png"
+    },
+    {
+        "merged": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-merged_res-55:\\drawable-xhdpi_splash.png.flat",
+        "source": "C:\\Users\\muluk\\.gradle\\daemon\\7.5\\com.jaggus.vendor.app-main-48:\\drawable-xhdpi\\splash.png"
     },
     {
         "merged": "com.jaggus.vendor.app-merged_res-55:/mipmap-mdpi_ic_launcher.png.flat",

@@ -293,9 +293,9 @@ MERGED from [com.google.maps.android:android-maps-utils:3.6.0] C:\Users\muluk\.g
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\muluk\.gradle\caches\transforms-3\44822452ad76d134b153967a60b15f93\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:12:9-38
+		ADDED from C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:12:9-39
 	android:icon
-		ADDED from C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:13:9-45
+		ADDED from C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:13:9-43
 activity#com.jaggus.vendor.MainActivity
 ADDED from C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:14:9-47:20
 	android:launchMode

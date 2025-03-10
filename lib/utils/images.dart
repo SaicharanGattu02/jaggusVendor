@@ -1,5 +1,6 @@
 class Images {
-  static String get appLogo => 'assets/images/icon.png';
+  // static String get appLogo => 'assets/images/icon.png';
+  static String get appLogo => 'assets/images/spalshimage.jpeg';
   static String get deliveryCompleted =>
       'assets/images/delivery___completed.png.png';
   static String get shimmerImage => 'assets/images/icon.png';
