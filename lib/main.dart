@@ -112,7 +112,6 @@ void main() async {
 
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
-
   FlutterError.onError = (FlutterErrorDetails details) {
     // Log the error details to a logging service or print them
     print("Errrrrrrrrrr:${details.exceptionAsString()}");
