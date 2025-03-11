@@ -2,10 +2,8 @@
 manifest
 ADDED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml:1:1-26:12
 INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml:1:1-26:12
-INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml:1:1-26:12
 	package
 		ADDED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml:3:5-45
-		INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml:2:5-51
@@ -55,13 +53,7 @@ uses-sdk
 INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml
 INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml
-INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml
-INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml
 	android:targetSdkVersion
 		INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml
-		ADDED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml
-		ADDED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\image_picker_android-0.8.12+22\android\src\main\AndroidManifest.xml

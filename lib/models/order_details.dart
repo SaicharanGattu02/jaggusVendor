@@ -54,6 +54,7 @@ class OrderDetailsByIdData {
       this.total,
       this.subTotal,
       this.deliveryCharge,
+      this.platformCharges,
       this.platform,
       this.deviceId,
       this.ip,
@@ -89,6 +90,7 @@ class OrderDetailsByIdData {
   String? total;
   String? subTotal;
   String? deliveryCharge;
+  String? platformCharges;
   dynamic platform;
   dynamic deviceId;
   dynamic ip;
@@ -126,6 +128,7 @@ class OrderDetailsByIdData {
         total: json["total"],
         subTotal: json["sub_total"],
         deliveryCharge: json["delivery_charge"],
+        platformCharges: json["platform_charges"],
         platform: json["platform"],
         deviceId: json["device_id"],
         ip: json["ip"],
@@ -177,6 +180,7 @@ class OrderDetailsByIdData {
         "total": total,
         "sub_total": subTotal,
         "delivery_charge": deliveryCharge,
+        "platform_charges": platformCharges,
         "platform": platform,
         "device_id": deviceId,
         "ip": ip,

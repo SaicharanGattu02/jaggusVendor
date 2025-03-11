@@ -8,6 +8,7 @@ import 'package:foodbank_marchantise_app/views/transaction/transaction_page.dart
 import 'package:get/get.dart';
 import 'package:pandabar/pandabar.dart';
 
+import 'MenuItems.dart';
 import 'home_page.dart';
 import 'reservations.dart';
 
@@ -45,9 +46,9 @@ class _HomePageState extends State<MainScreen> {
               icon: Icons.dashboard_outlined,
               title: 'DASHBOARD'.tr),
           PandaBarButtonData(
-              id: 'Reservations',
+              id: 'MenuItems',
               icon: Icons.event_note,
-              title: 'RESERVATIONS'.tr),
+              title: 'Menu Items'.tr),
           PandaBarButtonData(
               id: 'Orders_History', icon: Icons.history, title: 'ORDERS'.tr),
           PandaBarButtonData(
@@ -70,8 +71,8 @@ class _HomePageState extends State<MainScreen> {
           switch (page) {
             case 'Home':
               return Home_Page();
-            case 'Reservations':
-              return Reservations();
+            case 'MenuItems':
+              return MenuItems();
             case 'Orders_History':
               return Orderhistory();
             case 'Profile':

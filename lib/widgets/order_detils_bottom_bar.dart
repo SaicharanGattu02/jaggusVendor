@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 class Order_details_bottom_bar extends StatefulWidget {
   final String? subTotal;
   final String? deliveryFee;
+  final String? platformCharges;
   final String? total;
   final int? orderID;
   final int? statusCode;
@@ -15,6 +16,7 @@ class Order_details_bottom_bar extends StatefulWidget {
       required this.orderID,
       this.subTotal,
       this.deliveryFee,
+      this.platformCharges,
       this.total})
       : super(key: key);
 
@@ -75,6 +77,26 @@ class _Order_details_bottom_barState extends State<Order_details_bottom_bar> {
                   Text(
                     Get.find<GlobalController>().currency! +
                         widget.deliveryFee.toString(),
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Platform Charges",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    Get.find<GlobalController>().currency! +
+                        widget.platformCharges.toString(),
                     style: TextStyle(
                       fontSize: 16,
                     ),

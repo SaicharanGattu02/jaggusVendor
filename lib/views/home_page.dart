@@ -10,7 +10,6 @@ import 'package:foodbank_marchantise_app/widgets/shimmer/home_page_shimmer.dart'
 import 'package:get/get.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'no_order_order_history.dart';
 
 class Home_Page extends StatefulWidget {
@@ -20,14 +19,12 @@ class Home_Page extends StatefulWidget {
 }
 
 class _Home_PageState extends State<Home_Page> {
-  //int status=1;
   final order_Controller = Get.put(OrderListController());
   final settingController = Get.put(GlobalController());
 
   @override
   void initState() {
     order_Controller.onInit();
-
     if (mounted) {
       FirebaseMessaging.instance.getInitialMessage()
           .then((RemoteMessage? message) {});

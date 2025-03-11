@@ -11,7 +11,6 @@ import 'package:foodbank_marchantise_app/services/validators.dart';
 import 'package:foodbank_marchantise_app/views/main_screen.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../views/sign_in.dart';
 import 'global-controller.dart';
 

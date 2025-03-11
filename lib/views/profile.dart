@@ -125,136 +125,136 @@ class _ProfilePageState extends State<ProfilePage> {
                                   Icon(Icons.error),
                             ),
                             SizedBox(
-                              height: 15,
+                              height: 50,
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                InkWell(
-                                  onTap: () => print("Reward Taped"),
-                                  child: Container(
-                                    height: mainHeight / 10,
-                                    width: mainWidth / 2.5,
-                                    child: Card(
-                                      elevation: 2,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                      child: Center(
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Text(
-                                                  'CREDIT_MAIN'.tr,
-                                                  style: TextStyle(
-                                                    letterSpacing: .5,
-                                                    fontWeight: FontWeight.w600,
-                                                    color: Colors.grey.shade700,
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 3,
-                                                ),
-                                                Icon(
-                                                  Icons.arrow_circle_up,
-                                                  color: ThemeColors
-                                                      .baseThemeColor,
-                                                  size: 20,
-                                                )
-                                              ],
-                                            ),
-                                            SizedBox(
-                                              height: 5,
-                                            ),
-                                            Text(
-                                              '${profile.credit}',
-                                              style: TextStyle(
-                                                fontSize: 20,
-                                                color:
-                                                    ThemeColors.baseThemeColor,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 30,
-                                ),
-                                InkWell(
-                                  onTap: () => print("Order Taped"),
-                                  child: Container(
-                                    height: mainHeight / 10,
-                                    width: mainWidth / 2.5,
-                                    child: Card(
-                                      elevation: 2,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                      child: Center(
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Text(
-                                                  'ORDERS'.tr,
-                                                  style: TextStyle(
-                                                    letterSpacing: .5,
-                                                    fontWeight: FontWeight.w600,
-                                                    color: Colors.grey.shade700,
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 5,
-                                                ),
-                                                Icon(
-                                                  Icons.arrow_circle_up,
-                                                  color: ThemeColors
-                                                      .baseThemeColor,
-                                                  size: 20,
-                                                )
-                                              ],
-                                            ),
-                                            SizedBox(
-                                              height: 5,
-                                            ),
-                                            Text(
-                                              '${profile.totalOrders}',
-                                              style: TextStyle(
-                                                fontSize: 20,
-                                                color:
-                                                    ThemeColors.baseThemeColor,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                            // Row(
+                            //   mainAxisAlignment: MainAxisAlignment.center,
+                            //   children: [
+                            //     InkWell(
+                            //       onTap: () => print("Reward Taped"),
+                            //       child: Container(
+                            //         height: mainHeight / 10,
+                            //         width: mainWidth / 2.5,
+                            //         child: Card(
+                            //           elevation: 2,
+                            //           shape: RoundedRectangleBorder(
+                            //             borderRadius:
+                            //                 BorderRadius.circular(10.0),
+                            //           ),
+                            //           child: Center(
+                            //             child: Column(
+                            //               mainAxisAlignment:
+                            //                   MainAxisAlignment.center,
+                            //               crossAxisAlignment:
+                            //                   CrossAxisAlignment.center,
+                            //               children: [
+                            //                 Row(
+                            //                   crossAxisAlignment:
+                            //                       CrossAxisAlignment.start,
+                            //                   mainAxisAlignment:
+                            //                       MainAxisAlignment.center,
+                            //                   children: [
+                            //                     Text(
+                            //                       'CREDIT_MAIN'.tr,
+                            //                       style: TextStyle(
+                            //                         letterSpacing: .5,
+                            //                         fontWeight: FontWeight.w600,
+                            //                         color: Colors.grey.shade700,
+                            //                       ),
+                            //                     ),
+                            //                     SizedBox(
+                            //                       width: 3,
+                            //                     ),
+                            //                     Icon(
+                            //                       Icons.arrow_circle_up,
+                            //                       color: ThemeColors
+                            //                           .baseThemeColor,
+                            //                       size: 20,
+                            //                     )
+                            //                   ],
+                            //                 ),
+                            //                 SizedBox(
+                            //                   height: 5,
+                            //                 ),
+                            //                 Text(
+                            //                   '${profile.credit}',
+                            //                   style: TextStyle(
+                            //                     fontSize: 20,
+                            //                     color:
+                            //                         ThemeColors.baseThemeColor,
+                            //                   ),
+                            //                 ),
+                            //               ],
+                            //             ),
+                            //           ),
+                            //         ),
+                            //       ),
+                            //     ),
+                            //     SizedBox(
+                            //       width: 30,
+                            //     ),
+                            //     InkWell(
+                            //       onTap: () => print("Order Taped"),
+                            //       child: Container(
+                            //         height: mainHeight / 10,
+                            //         width: mainWidth / 2.5,
+                            //         child: Card(
+                            //           elevation: 2,
+                            //           shape: RoundedRectangleBorder(
+                            //             borderRadius:
+                            //                 BorderRadius.circular(10.0),
+                            //           ),
+                            //           child: Center(
+                            //             child: Column(
+                            //               mainAxisAlignment:
+                            //                   MainAxisAlignment.center,
+                            //               crossAxisAlignment:
+                            //                   CrossAxisAlignment.center,
+                            //               children: [
+                            //                 Row(
+                            //                   crossAxisAlignment:
+                            //                       CrossAxisAlignment.start,
+                            //                   mainAxisAlignment:
+                            //                       MainAxisAlignment.center,
+                            //                   children: [
+                            //                     Text(
+                            //                       'ORDERS'.tr,
+                            //                       style: TextStyle(
+                            //                         letterSpacing: .5,
+                            //                         fontWeight: FontWeight.w600,
+                            //                         color: Colors.grey.shade700,
+                            //                       ),
+                            //                     ),
+                            //                     SizedBox(
+                            //                       width: 5,
+                            //                     ),
+                            //                     Icon(
+                            //                       Icons.arrow_circle_up,
+                            //                       color: ThemeColors
+                            //                           .baseThemeColor,
+                            //                       size: 20,
+                            //                     )
+                            //                   ],
+                            //                 ),
+                            //                 SizedBox(
+                            //                   height: 5,
+                            //                 ),
+                            //                 Text(
+                            //                   '${profile.totalOrders}',
+                            //                   style: TextStyle(
+                            //                     fontSize: 20,
+                            //                     color:
+                            //                         ThemeColors.baseThemeColor,
+                            //                   ),
+                            //                 ),
+                            //               ],
+                            //             ),
+                            //           ),
+                            //         ),
+                            //       ),
+                            //     ),
+                            //   ],
+                            // ),
                             Container(
                               //margin: EdgeInsets.symmetric(vertical: 20),
                               height: mainHeight / 2,
@@ -377,29 +377,29 @@ class _ProfilePageState extends State<ProfilePage> {
                                               },
                                             )
                                           : Container(),
-                                      GestureDetector(
-                                        child: Container(
-                                          height: 40,
-                                          child: ListTile(
-                                            leading: Icon(Icons.balance,
-                                                color:
-                                                    ThemeColors.baseThemeColor),
-                                            title: Text('WITHDRAW'.tr,
-                                                style: TextStyle(
-                                                    color: ThemeColors
-                                                        .baseThemeColor,
-                                                    fontSize: 18,
-                                                    fontWeight: FontWeight.w400)),
-                                            trailing: Icon(
-                                                Icons.arrow_forward_ios,
-                                                color:
-                                                    ThemeColors.baseThemeColor),
-                                          ),
-                                        ),
-                                        onTap: () {
-                                          Get.to(() => WithdrawPage());
-                                        },
-                                      ),
+                                      // GestureDetector(
+                                      //   child: Container(
+                                      //     height: 40,
+                                      //     child: ListTile(
+                                      //       leading: Icon(Icons.balance,
+                                      //           color:
+                                      //               ThemeColors.baseThemeColor),
+                                      //       title: Text('WITHDRAW'.tr,
+                                      //           style: TextStyle(
+                                      //               color: ThemeColors
+                                      //                   .baseThemeColor,
+                                      //               fontSize: 18,
+                                      //               fontWeight: FontWeight.w400)),
+                                      //       trailing: Icon(
+                                      //           Icons.arrow_forward_ios,
+                                      //           color:
+                                      //               ThemeColors.baseThemeColor),
+                                      //     ),
+                                      //   ),
+                                      //   onTap: () {
+                                      //     Get.to(() => WithdrawPage());
+                                      //   },
+                                      // ),
                                       GestureDetector(
                                         child: Container(
                                           height: 40,

@@ -25,8 +25,9 @@ class APIList {
   static String? statusOrderId = "status-order/";
   static String? notificationOrderUpdateById = "restaurant-order/";
   static String? notificationOrderHistory = "restaurant-order/history";
-  static String? notificationOrderUpdate =
-      "notification-order-product-receive/";
+  static String? notificationOrderUpdate = "notification-order-product-receive/";
   static String? notificationOrderStatus = "notification-order-status/";
   static String? OrderStatusUpdate = "restaurant-order/";
+  static String? menuItems = "restaurant-menuItems";
+  static String? menuItemsStatus = "restaurant-menuItems-update";
 }

@@ -84,8 +84,8 @@ class _Order_detailsState extends State<Order_details> {
                 bottomNavigationBar: Order_details_bottom_bar(
                   subTotal:
                       orderDetails.orderDetailsByIdData!.subTotal.toString(),
-                  deliveryFee: orderDetails.orderDetailsByIdData!.deliveryCharge
-                      .toString(),
+                  deliveryFee: orderDetails.orderDetailsByIdData!.deliveryCharge.toString(),
+                  platformCharges: orderDetails.orderDetailsByIdData!.platformCharges.toString(),
                   total: orderDetails.orderDetailsByIdData!.total,
                   orderID: orderDetails.orderDetailsByIdData!.id,
                   statusCode: orderDetails.statusCode,

@@ -2,10 +2,8 @@
 manifest
 ADDED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml:1:1-37:12
 INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml:1:1-37:12
-INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml:1:1-37:12
 	package
 		ADDED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml:2:3-50
-		INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml:1:11-69
@@ -85,13 +83,7 @@ uses-sdk
 INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml
 INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml
-INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml
-INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml
 	android:targetSdkVersion
 		INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml
-		ADDED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml
-		ADDED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\muluk\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\src\main\AndroidManifest.xml
