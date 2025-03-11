@@ -33,7 +33,7 @@ class _HomePageState extends State<MainScreen> {
         buttonSelectedColor: ThemeColors.baseThemeColor,
         fabIcon: InkWell(
             onTap: () {
-              Get.to(TransactionsPage());
+              // Get.to(TransactionsPage());
             },
             child: Icon(
               FontAwesomeIcons.creditCard,

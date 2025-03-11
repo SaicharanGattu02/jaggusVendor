@@ -105,7 +105,7 @@ class _Order_detailsState extends State<Order_details> {
                               children: [
                                 GestureDetector(
                                   onTap: () {
-                                    setState(() {
+                                    setState(() { 
                                       statusActive = 1;
                                     });
                                   },
