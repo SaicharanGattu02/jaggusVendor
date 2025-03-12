@@ -41,7 +41,7 @@ class _OrdersState extends State<Orders> {
       builder: (orders) => Expanded(
         child: ListView.builder(
             physics: AlwaysScrollableScrollPhysics(),
-            itemCount: orders.orderList.length,
+            itemCount: orders.filteredOrderList.length,
             itemBuilder: (context, index) {
               return Container(
                   padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2.5),
@@ -61,11 +61,11 @@ class _OrdersState extends State<Orders> {
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Text(orders.orderList[index].timeFormat
+                                    Text(orders.filteredOrderList[index].timeFormat
                                         .toString()),
                                   ],
                                 ),
-                                orders.orderList[index].status == 5
+                                orders.filteredOrderList[index].status == 5
                                     ? Padding(
                                         padding: const EdgeInsets.only(
                                             top: 5, bottom: 5),
@@ -97,7 +97,7 @@ class _OrdersState extends State<Orders> {
                                                         acceptDialogue,
                                                         '14',
                                                         orders
-                                                            .orderList[index].id
+                                                            .filteredOrderList[index].id
                                                             .toString());
                                                   });
                                                 },
@@ -132,7 +132,7 @@ class _OrdersState extends State<Orders> {
                                                         cancelDialogue,
                                                         '10',
                                                         orders
-                                                            .orderList[index].id
+                                                            .filteredOrderList[index].id
                                                             .toString());
                                                   });
                                                 },
@@ -155,7 +155,7 @@ class _OrdersState extends State<Orders> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            orders.orderList[index].status == 14
+                                            orders.filteredOrderList[index].status == 14
                                                 ? Container(
                                                     padding: EdgeInsets.only(
                                                         right: 5),
@@ -175,18 +175,14 @@ class _OrdersState extends State<Orders> {
                                                         ),
                                                       ),
                                                       onPressed: () async {
-                                                        if (orders
-                                                                .orderList[
-                                                                    index]
-                                                                .orderType ==
-                                                            1) {
+                                                        if (orders.filteredOrderList[index].orderType == 1) {
                                                           showAlertDialog(
                                                               context,
                                                               DialogueProcess,
                                                               processDialogue,
                                                               '15',
                                                               orders
-                                                                  .orderList[
+                                                                  .filteredOrderList[
                                                                       index]
                                                                   .id
                                                                   .toString());
@@ -197,14 +193,14 @@ class _OrdersState extends State<Orders> {
                                                               completedDialogue,
                                                               '20',
                                                               orders
-                                                                  .orderList[
+                                                                  .filteredOrderList[
                                                                       index]
                                                                   .id
                                                                   .toString());
                                                         }
                                                       },
                                                       child: orders
-                                                                  .orderList[
+                                                                  .filteredOrderList[
                                                                       index]
                                                                   .orderType ==
                                                               1
@@ -236,7 +232,7 @@ class _OrdersState extends State<Orders> {
                             ),
                             InkWell(
                               onTap: () => Get.to(() => Order_details(
-                                    orderId: orders.orderList[index].id,
+                                    orderId: orders.filteredOrderList[index].id,
                                   )),
                               child: Column(children: [
                                 Padding(
@@ -263,7 +259,7 @@ class _OrdersState extends State<Orders> {
                                             ),
                                           ),
                                           Text(
-                                            orders.orderList[index].orderCode!
+                                            orders.filteredOrderList[index].orderCode!
                                                 .toString(),
                                             style: TextStyle(
                                               color:
@@ -288,7 +284,7 @@ class _OrdersState extends State<Orders> {
                                           Text(
                                             Get.find<GlobalController>()
                                                     .currency! +
-                                                orders.orderList[index].total
+                                                orders.filteredOrderList[index].total
                                                     .toString(),
                                             style: TextStyle(
                                               color:
@@ -321,7 +317,7 @@ class _OrdersState extends State<Orders> {
                                                 ),
                                           ),
                                           Text(
-                                            orders.orderList[index].createdAt
+                                            orders.filteredOrderList[index].createdAt
                                                 .toString(),
                                             style: TextStyle(
                                               overflow: TextOverflow.ellipsis,
@@ -344,9 +340,9 @@ class _OrdersState extends State<Orders> {
                                               //    color: Colors.deepOrange
                                             ),
                                           ),
-                                          orders.orderList[index].orderType == 2
+                                          orders.filteredOrderList[index].orderType == 2
                                               ? Text(
-                                                  orders.orderList[index]
+                                                  orders.filteredOrderList[index]
                                                       .orderTypeName
                                                       .toString(),
                                                   style: TextStyle(
@@ -357,7 +353,7 @@ class _OrdersState extends State<Orders> {
                                                   ),
                                                 )
                                               : Text(
-                                                  orders.orderList[index]
+                                                  orders.filteredOrderList[index]
                                                       .orderTypeName
                                                       .toString(),
                                                   style: TextStyle(
@@ -387,7 +383,7 @@ class _OrdersState extends State<Orders> {
                                       ),
                                       Text(
                                         orders
-                                            .orderList[index].paymentMethodName
+                                            .filteredOrderList[index].paymentMethodName
                                             .toString(),
                                         style: TextStyle(
                                           overflow: TextOverflow.ellipsis,

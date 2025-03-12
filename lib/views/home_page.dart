@@ -83,7 +83,6 @@ class _Home_PageState extends State<Home_Page> {
   Widget build(BuildContext context) {
     SizeConfig sizeConfig = SizeConfig();
     sizeConfig.init(context);
-
     return GetBuilder<OrderListController>(
       init: OrderListController(),
       builder: (orders) => orders.loader
@@ -106,11 +105,44 @@ class _Home_PageState extends State<Home_Page> {
               ),
               body: RefreshIndicator(
                 onRefresh: _refresh,
-                child: orders.orderList.length > 0
+                child: orders.filteredOrderList.length > 0
                     ? Column(
-                        //mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[Orders()],
-                      )
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: ThemeColors.baseThemeColor
+                              ),
+                              onPressed: () {
+                                order_Controller.filterOrders(1); // Show only Delivery orders
+                              },
+                              child: Text("Delivery"),
+                            ),
+                          ),
+                          SizedBox(width: 10), // Adds space between buttons
+                          Expanded(
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: ThemeColors.baseThemeColor
+                              ),
+                              onPressed: () {
+                                order_Controller.filterOrders(2); // Show only Delivery orders
+                              },
+                              child: Text("Pickup"),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Orders(),
+                  ],
+                )
+
                     : NoOrderFoundOrderHistory(
                         "NO_ORDER".tr, Images.noOrderFound),
               )),

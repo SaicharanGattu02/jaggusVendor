@@ -10,6 +10,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 class OrderListController extends GetxController {
   Server server = Server();
   List<Order> orderList = <Order>[];
+  List<Order> filteredOrderList = <Order>[]; // Filtered list
   int? len;
   bool loader = true;
   var orderId;
@@ -37,6 +38,7 @@ class OrderListController extends GetxController {
         var orderListData = RestaurantOrder.fromJson(jsonResponse);
         orderList = <Order>[];
         orderList.addAll(orderListData.data!);
+        filteredOrderList = List.from(orderList); // Initially, show all
         loader = false;
         Future.delayed(Duration(milliseconds: 10), () {
           update();
@@ -49,6 +51,21 @@ class OrderListController extends GetxController {
       }
     });
   }
+
+
+  // Method to filter orders based on orderType
+  void filterOrders(int orderType) {
+    if (orderType == 0) {
+      // Show all orders
+      filteredOrderList = List.from(orderList);
+    } else {
+      // Filter based on orderType (1 = Delivery, 2 = Pickup)
+      filteredOrderList = orderList.where((order) => order.orderType == orderType).toList();
+    }
+    update(); // Refresh UI
+  }
+
+
 
   changeStatus(status, id) async {
     loader = true;
