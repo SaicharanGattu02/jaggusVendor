@@ -199,7 +199,6 @@ class FoodEx extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-
     Get.put(GlobalController()).onInit();
     return OverlaySupport(
       child: GetMaterialApp(

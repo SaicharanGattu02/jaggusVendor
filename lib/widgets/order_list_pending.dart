@@ -61,7 +61,8 @@ class _OrdersState extends State<Orders> {
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Text(orders.filteredOrderList[index].timeFormat
+                                    Text(orders
+                                        .filteredOrderList[index].timeFormat
                                         .toString()),
                                   ],
                                 ),
@@ -74,8 +75,8 @@ class _OrdersState extends State<Orders> {
                                               MainAxisAlignment.center,
                                           children: [
                                             Container(
-                                              padding:
-                                                  EdgeInsets.only(right: 5, left: 5),
+                                              padding: EdgeInsets.only(
+                                                  right: 5, left: 5),
                                               height: 30,
                                               child: ElevatedButton(
                                                 style: ElevatedButton.styleFrom(
@@ -97,7 +98,9 @@ class _OrdersState extends State<Orders> {
                                                         acceptDialogue,
                                                         '14',
                                                         orders
-                                                            .filteredOrderList[index].id
+                                                            .filteredOrderList[
+                                                                index]
+                                                            .id
                                                             .toString());
                                                   });
                                                 },
@@ -132,7 +135,9 @@ class _OrdersState extends State<Orders> {
                                                         cancelDialogue,
                                                         '10',
                                                         orders
-                                                            .filteredOrderList[index].id
+                                                            .filteredOrderList[
+                                                                index]
+                                                            .id
                                                             .toString());
                                                   });
                                                 },
@@ -148,86 +153,110 @@ class _OrdersState extends State<Orders> {
                                           ],
                                         ),
                                       )
-                                    : Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 5, bottom: 5),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            orders.filteredOrderList[index].status == 14
-                                                ? Container(
-                                                    padding: EdgeInsets.only(
-                                                        right: 5),
-                                                    height: 30,
-                                                    child: ElevatedButton(
-                                                      style: ElevatedButton
-                                                          .styleFrom(
-                                                        //  elevation: 0.0,
-                                                        backgroundColor: Colors
-                                                            .green, // background
-                                                        // foreground
-                                                        shape:
-                                                            RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                  10), // <-- Radius
-                                                        ),
-                                                      ),
-                                                      onPressed: () async {
-                                                        if (orders.filteredOrderList[index].orderType == 1) {
-                                                          showAlertDialog(
-                                                              context,
-                                                              DialogueProcess,
-                                                              processDialogue,
-                                                              '15',
-                                                              orders
-                                                                  .filteredOrderList[
-                                                                      index]
-                                                                  .id
-                                                                  .toString());
-                                                        } else {
-                                                          showAlertDialog(
-                                                              context,
-                                                              DialogueCompleted,
-                                                              completedDialogue,
-                                                              '20',
-                                                              orders
-                                                                  .filteredOrderList[
-                                                                      index]
-                                                                  .id
-                                                                  .toString());
-                                                        }
-                                                      },
-                                                      child: orders
-                                                                  .filteredOrderList[
-                                                                      index]
-                                                                  .orderType ==
-                                                              1
-                                                          ? Text(
-                                                              'PROCESS'.tr,
-                                                              style: TextStyle(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold),
-                                                            )
-                                                          : Text(
-                                                              'COMPLETED'.tr,
-                                                              style: TextStyle(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold),
+                                    : orders.filteredOrderList[index].status == 10
+                                        ? Container(
+                                            padding: EdgeInsets.all(6),
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(8),
+                                              ),
+                                              color: Colors.red,
+                                            ),
+                                            child: Text(
+                                              "Cancelled",
+                                              style: TextStyle(
+                                                  color: Colors
+                                                      .white), // Ensuring text is visible
+                                            ),
+                                          )
+                                        : Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 5, bottom: 5),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                orders.filteredOrderList[index]
+                                                            .status ==
+                                                        14
+                                                    ? Container(
+                                                        padding:
+                                                            EdgeInsets.only(
+                                                                right: 5),
+                                                        height: 30,
+                                                        child: ElevatedButton(
+                                                          style: ElevatedButton
+                                                              .styleFrom(
+                                                            //  elevation: 0.0,
+                                                            backgroundColor: Colors
+                                                                .green, // background
+                                                            // foreground
+                                                            shape: RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10), // <-- Radius
                                                             ),
-                                                    ),
-                                                  )
-                                                : Container(),
-                                          ],
-                                        ),
-                                      )
+                                                          ),
+                                                          onPressed: () async {
+                                                            if (orders
+                                                                    .filteredOrderList[
+                                                                        index]
+                                                                    .orderType ==
+                                                                1) {
+                                                              showAlertDialog(
+                                                                  context,
+                                                                  DialogueProcess,
+                                                                  processDialogue,
+                                                                  '15',
+                                                                  orders
+                                                                      .filteredOrderList[
+                                                                          index]
+                                                                      .id
+                                                                      .toString());
+                                                            } else {
+                                                              showAlertDialog(
+                                                                  context,
+                                                                  DialogueCompleted,
+                                                                  completedDialogue,
+                                                                  '20',
+                                                                  orders
+                                                                      .filteredOrderList[
+                                                                          index]
+                                                                      .id
+                                                                      .toString());
+                                                            }
+                                                          },
+                                                          child: orders
+                                                                      .filteredOrderList[
+                                                                          index]
+                                                                      .orderType ==
+                                                                  1
+                                                              ? Text(
+                                                                  'PROCESS'.tr,
+                                                                  style: TextStyle(
+                                                                      color: Colors
+                                                                          .white,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold),
+                                                                )
+                                                              : Text(
+                                                                  'COMPLETED'
+                                                                      .tr,
+                                                                  style: TextStyle(
+                                                                      color: Colors
+                                                                          .white,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold),
+                                                                ),
+                                                        ),
+                                                      )
+                                                    : Container(),
+                                              ],
+                                            ),
+                                          )
                               ],
                             ),
                             InkWell(
@@ -259,7 +288,8 @@ class _OrdersState extends State<Orders> {
                                             ),
                                           ),
                                           Text(
-                                            orders.filteredOrderList[index].orderCode!
+                                            orders.filteredOrderList[index]
+                                                .orderCode!
                                                 .toString(),
                                             style: TextStyle(
                                               color:
@@ -284,7 +314,8 @@ class _OrdersState extends State<Orders> {
                                           Text(
                                             Get.find<GlobalController>()
                                                     .currency! +
-                                                orders.filteredOrderList[index].total
+                                                orders.filteredOrderList[index]
+                                                    .total
                                                     .toString(),
                                             style: TextStyle(
                                               color:
@@ -317,7 +348,8 @@ class _OrdersState extends State<Orders> {
                                                 ),
                                           ),
                                           Text(
-                                            orders.filteredOrderList[index].createdAt
+                                            orders.filteredOrderList[index]
+                                                .createdAt
                                                 .toString(),
                                             style: TextStyle(
                                               overflow: TextOverflow.ellipsis,
@@ -340,9 +372,12 @@ class _OrdersState extends State<Orders> {
                                               //    color: Colors.deepOrange
                                             ),
                                           ),
-                                          orders.filteredOrderList[index].orderType == 2
+                                          orders.filteredOrderList[index]
+                                                      .orderType ==
+                                                  2
                                               ? Text(
-                                                  orders.filteredOrderList[index]
+                                                  orders
+                                                      .filteredOrderList[index]
                                                       .orderTypeName
                                                       .toString(),
                                                   style: TextStyle(
@@ -353,7 +388,8 @@ class _OrdersState extends State<Orders> {
                                                   ),
                                                 )
                                               : Text(
-                                                  orders.filteredOrderList[index]
+                                                  orders
+                                                      .filteredOrderList[index]
                                                       .orderTypeName
                                                       .toString(),
                                                   style: TextStyle(
@@ -382,8 +418,8 @@ class _OrdersState extends State<Orders> {
                                         ),
                                       ),
                                       Text(
-                                        orders
-                                            .filteredOrderList[index].paymentMethodName
+                                        orders.filteredOrderList[index]
+                                            .paymentMethodName
                                             .toString(),
                                         style: TextStyle(
                                           overflow: TextOverflow.ellipsis,
