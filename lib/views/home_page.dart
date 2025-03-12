@@ -78,7 +78,7 @@ class _Home_PageState extends State<Home_Page> {
     order_Controller.onInit();
     await Future.delayed(new Duration(seconds: 3));
   }
-
+  int selectedIndex=0;
   @override
   Widget build(BuildContext context) {
     SizeConfig sizeConfig = SizeConfig();
@@ -116,26 +116,36 @@ class _Home_PageState extends State<Home_Page> {
                           Expanded(
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: ThemeColors.baseThemeColor
+                                backgroundColor: selectedIndex == 1 ? ThemeColors.baseThemeColor : Colors.white,
+                                foregroundColor: selectedIndex == 1 ? Colors.white : ThemeColors.baseThemeColor,
+                                side: BorderSide(color: ThemeColors.baseThemeColor, width: 2),
                               ),
                               onPressed: () {
-                                order_Controller.filterOrders(1); // Show only Delivery orders
+                                setState(() {
+                                  selectedIndex=1;
+                                });
+                                order_Controller.filterOrders(1);
                               },
                               child: Text("Delivery"),
                             ),
                           ),
-                          SizedBox(width: 10), // Adds space between buttons
+                          SizedBox(width: 10),
                           Expanded(
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: ThemeColors.baseThemeColor
+                                backgroundColor: selectedIndex == 2 ? ThemeColors.baseThemeColor : Colors.white,
+                                foregroundColor: selectedIndex == 2 ? Colors.white : ThemeColors.baseThemeColor,
+                                side: BorderSide(color: ThemeColors.baseThemeColor, width: 2),
                               ),
                               onPressed: () {
-                                order_Controller.filterOrders(2); // Show only Delivery orders
+                                setState(() {
+                                  selectedIndex=2;
+                                });
+                                order_Controller.filterOrders(2);
                               },
                               child: Text("Pickup"),
                             ),
-                          ),
+                          )
                         ],
                       ),
                     ),
