@@ -313,7 +313,7 @@ MERGED from [com.google.maps.android:android-maps-utils:3.6.0] C:\Users\muluk\.g
 		ADDED from C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:11:9-39
 	android:icon
 		ADDED from C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:12:9-43
-activity#com.jaggus.vendor.MainActivity
+activity#vendor.jaggus.app.MainActivity
 ADDED from C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:13:9-46:20
 	android:launchMode
 		ADDED from C:\Users\muluk\AndroidStudioProjects\jaggusVendor\android\app\src\main\AndroidManifest.xml:16:13-43
@@ -995,7 +995,7 @@ ADDED from [androidx.core:core:1.13.1] C:\Users\muluk\.gradle\caches\8.10.2\tran
 		ADDED from [androidx.core:core:1.13.1] C:\Users\muluk\.gradle\caches\8.10.2\transforms\5ac8f36b2c94e8b4a17367456751eb8e\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.13.1] C:\Users\muluk\.gradle\caches\8.10.2\transforms\5ac8f36b2c94e8b4a17367456751eb8e\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
-permission#com.jaggus.vendor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#vendor.jaggus.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.1] C:\Users\muluk\.gradle\caches\8.10.2\transforms\5ac8f36b2c94e8b4a17367456751eb8e\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.13.1] C:\Users\muluk\.gradle\caches\8.10.2\transforms\5ac8f36b2c94e8b4a17367456751eb8e\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
@@ -1005,7 +1005,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.1] C:\Users\muluk\.gradle\caches\8.10.2\transforms\5ac8f36b2c94e8b4a17367456751eb8e\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.13.1] C:\Users\muluk\.gradle\caches\8.10.2\transforms\5ac8f36b2c94e8b4a17367456751eb8e\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
-uses-permission#com.jaggus.vendor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#vendor.jaggus.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.1] C:\Users\muluk\.gradle\caches\8.10.2\transforms\5ac8f36b2c94e8b4a17367456751eb8e\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.13.1] C:\Users\muluk\.gradle\caches\8.10.2\transforms\5ac8f36b2c94e8b4a17367456751eb8e\transformed\core-1.13.1\AndroidManifest.xml:26:22-94

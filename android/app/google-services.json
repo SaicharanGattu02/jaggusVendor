@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:372763361851:android:496981a55af05fda58921e",
         "android_client_info": {
-          "package_name": "com.jaggus.vendor"
+          "package_name": "vendor.jaggus.app"
         }
       },
       "oauth_client": [],
