@@ -21,67 +21,121 @@ class MainScreen extends StatefulWidget {
 class _HomePageState extends State<MainScreen> {
   final auth = Get.put(AuthController());
 
-  String page = 'Home';
+  int _selectedIndex = 0;
+
+  final List<Widget> _pages = [
+    Home_Page(),
+    MenuItems(),
+    Orderhistory(),
+    ProfilePage(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      bottomNavigationBar: PandaBar(
+      bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
-        buttonColor: Colors.blueGrey,
-        buttonSelectedColor: ThemeColors.baseThemeColor,
-        fabIcon: InkWell(
-            onTap: () {
-              // Get.to(TransactionsPage());
-            },
-            child: Icon(
-              FontAwesomeIcons.creditCard,
-              color: Colors.white,
-            )),
-        fabColors: [ThemeColors.baseThemeColor, ThemeColors.baseThemeColor],
-        buttonData: [
-          PandaBarButtonData(
-              id: 'Home',
-              icon: Icons.dashboard_outlined,
-              title: 'DASHBOARD'.tr),
-          PandaBarButtonData(
-              id: 'MenuItems',
-              icon: Icons.event_note,
-              title: 'Menu Items'.tr),
-          PandaBarButtonData(
-              id: 'Orders_History', icon: Icons.history, title: 'ORDERS'.tr),
-          PandaBarButtonData(
-              id: 'Profile', icon: Icons.person, title: 'PROFILE'.tr),
+        selectedItemColor: ThemeColors.baseThemeColor,
+        unselectedItemColor: Colors.blueGrey,
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard_outlined),
+            label: 'DASHBOARD',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.event_note),
+            label: 'Menu Items',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.history),
+            label: 'ORDERS',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'PROFILE',
+          ),
         ],
-        onFabButtonPressed: () {
-          setState(() {
-            // Get.to(() => MainScreen());
-          });
-        },
-        onChange: (id) {
-          setState(() {
-            page = id;
-          });
-        },
       ),
-      body: Builder(
-        builder: (context) {
-          print(page);
-          switch (page) {
-            case 'Home':
-              return Home_Page();
-            case 'MenuItems':
-              return MenuItems();
-            case 'Orders_History':
-              return Orderhistory();
-            case 'Profile':
-              return ProfilePage();
-            default:
-              return Home_Page();
-          }
-        },
-      ),
+      body: _pages[_selectedIndex],
     );
   }
 }
+
+
+// class _HomePageState extends State<MainScreen> {
+//   final auth = Get.put(AuthController());
+//
+//   String page = 'Home';
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       extendBody: true,
+//       bottomNavigationBar: PandaBar(
+//         backgroundColor: Colors.white,
+//         buttonColor: Colors.blueGrey,
+//         buttonSelectedColor: ThemeColors.baseThemeColor,
+//         fabIcon: InkWell(
+//             onTap: () {
+//               // Get.to(TransactionsPage());
+//             },
+//             child: Icon(
+//               FontAwesomeIcons.creditCard,
+//               color: Colors.white,
+//             )),
+//         fabColors: [ThemeColors.baseThemeColor, ThemeColors.baseThemeColor],
+//         buttonData: [
+//           PandaBarButtonData(
+//               id: 'Home',
+//               icon: Icons.dashboard_outlined,
+//               title: 'DASHBOARD'.tr),
+//           PandaBarButtonData(
+//               id: 'MenuItems',
+//               icon: Icons.event_note,
+//               title: 'Menu Items'.tr),
+//           PandaBarButtonData(
+//               id: 'Orders_History', icon: Icons.history, title: 'ORDERS'.tr),
+//           PandaBarButtonData(
+//               id: 'Profile', icon: Icons.person, title: 'PROFILE'.tr),
+//         ],
+//         onFabButtonPressed: () {
+//           setState(() {
+//             // Get.to(() => MainScreen());
+//           });
+//         },
+//         onChange: (id) {
+//           setState(() {
+//             page = id;
+//           });
+//         },
+//       ),
+//       body: Builder(
+//         builder: (context) {
+//           print(page);
+//           switch (page) {
+//             case 'Home':
+//               return Home_Page();
+//             case 'MenuItems':
+//               return MenuItems();
+//             case 'Orders_History':
+//               return Orderhistory();
+//             case 'Profile':
+//               return ProfilePage();
+//             default:
+//               return Home_Page();
+//           }
+//         },
+//       ),
+//     );
+//   }
+// }
+

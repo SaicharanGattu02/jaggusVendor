@@ -7,6 +7,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:foodbank_marchantise_app/services/ForegroundService.dart';
 import 'package:foodbank_marchantise_app/widgets/authentication.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
@@ -128,69 +129,98 @@ void main() async {
   runApp(FoodEx());
 }
 
-// Function to display local notifications
+// // Function to display local notifications
+// void showNotification(RemoteNotification notification,
+//     AndroidNotification android, Map<String, dynamic> data) async {
+//   await audioPlayer.play(AssetSource('sounds/jaggus_tone.mp3')); // Corrected line
+//   AndroidNotificationDetails androidPlatformChannelSpecifics =
+//   AndroidNotificationDetails(
+//     'jaggus_channel_id',
+//     'jaggus_channel_name',
+//     importance: Importance.max,
+//     priority: Priority.high,
+//     playSound: false,
+//     icon: '@mipmap/ic_launcher',
+//   );
+//   NotificationDetails platformChannelSpecifics =
+//   NotificationDetails(android: androidPlatformChannelSpecifics);
+//
+//   await flutterLocalNotificationsPlugin.show(
+//     notification.hashCode,
+//     notification.title,
+//     notification.body,
+//     platformChannelSpecifics,
+//     payload: jsonEncode(data), // Convert payload data to String
+//   );
+// }
+
 void showNotification(RemoteNotification notification,
     AndroidNotification android, Map<String, dynamic> data) async {
-  await audioPlayer.play(AssetSource('sounds/jaggus_tone.mp3')); // Corrected line
-  AndroidNotificationDetails androidPlatformChannelSpecifics =
-  AndroidNotificationDetails(
-    'jaggus_channel_id',
-    'jaggus_channel_name',
-    importance: Importance.max,
-    priority: Priority.high,
-    playSound: false,
-    icon: '@mipmap/ic_launcher',
-  );
-  NotificationDetails platformChannelSpecifics =
-  NotificationDetails(android: androidPlatformChannelSpecifics);
-
-  await flutterLocalNotificationsPlugin.show(
-    notification.hashCode,
-    notification.title,
-    notification.body,
-    platformChannelSpecifics,
-    payload: jsonEncode(data), // Convert payload data to String
-  );
+  // Start foreground service to loop custom tone
+  ForegroundService.startService(notification.title ?? "Jaggus Alert", notification.body ?? "Custom notification sound is playing...");
 }
 
+// AndroidNotificationDetails androidPlatformChannelSpecifics =
+// AndroidNotificationDetails(
+//   'jaggus_channel_id',
+//   'jaggus_channel_name',
+//   importance: Importance.max,
+//   priority: Priority.high,
+//   playSound: false, // Sound is played by the foreground service
+//   icon: '@mipmap/ic_launcher',
+// );
+//
+// NotificationDetails platformChannelSpecifics =
+// NotificationDetails(android: androidPlatformChannelSpecifics);
+//
+// await flutterLocalNotificationsPlugin.show(
+//   notification.hashCode,
+//   notification.title,
+//   notification.body,
+//   platformChannelSpecifics,
+//   payload: jsonEncode(data),
+// );
+
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(); // Ensure Firebase is initialized
   print("🔔 Background/Killed Notification Received!");
   print("🔹 Title: ${message.notification?.title}");
   print("🔹 Body: ${message.notification?.body}");
   print("🔹 Data: ${message.data}");
-  print("🔹 Full Payload: ${message.toMap()}");
-  print("Handling background message: ${message.messageId}");
 
-  RemoteNotification? notification = message.notification;
-  AndroidNotification? android = message.notification?.android;
+  String title = message.notification?.title ?? "Jaggus Alert";
+  String body = message.notification?.body ?? "Custom notification sound is playing...";
 
-  if (notification != null && android != null) {
-    print('Background/Killed Message received: ${notification.title}');
-
-    AndroidNotificationDetails androidPlatformChannelSpecifics =
-    AndroidNotificationDetails(
-      'wave_remote_notifications_priority', // Ensure it matches the channel ID
-      'Wave messages and updates on priority',
-      importance: Importance.max,
-      priority: Priority.high,
-      playSound: true,
-      sound: RawResourceAndroidNotificationSound('jaggus_tone'),
-      icon: '@mipmap/ic_launcher',
-    );
-
-    NotificationDetails platformChannelSpecifics =
-    NotificationDetails(android: androidPlatformChannelSpecifics);
-
-    FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
-    await flutterLocalNotificationsPlugin.show(
-      notification.hashCode,
-      notification.title,
-      notification.body,
-      platformChannelSpecifics,
-    );
-  }
+  // Start foreground service to continuously play tone
+  ForegroundService.startService(title, body);
 }
+
+
+
+
+// AndroidNotificationDetails androidPlatformChannelSpecifics =
+// AndroidNotificationDetails(
+//   'wave_remote_notifications_priority', // Ensure it matches the channel ID
+//   'Wave messages and updates on priority',
+//   importance: Importance.max,
+//   priority: Priority.high,
+//   playSound: true,
+//   sound: RawResourceAndroidNotificationSound('jaggus_tone'),
+//   icon: '@mipmap/ic_launcher',
+// );
+//
+// NotificationDetails platformChannelSpecifics =
+// NotificationDetails(android: androidPlatformChannelSpecifics);
+//
+// FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+// await flutterLocalNotificationsPlugin.show(
+//   notification.hashCode,
+//   notification.title,
+//   notification.body,
+//   platformChannelSpecifics,
+// );
+
+
 
 class FoodEx extends StatelessWidget {
   @override
