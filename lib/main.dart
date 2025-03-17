@@ -160,27 +160,6 @@ void showNotification(RemoteNotification notification,
   ForegroundService.startService(notification.title ?? "Jaggus Alert", notification.body ?? "Custom notification sound is playing...");
 }
 
-// AndroidNotificationDetails androidPlatformChannelSpecifics =
-// AndroidNotificationDetails(
-//   'jaggus_channel_id',
-//   'jaggus_channel_name',
-//   importance: Importance.max,
-//   priority: Priority.high,
-//   playSound: false, // Sound is played by the foreground service
-//   icon: '@mipmap/ic_launcher',
-// );
-//
-// NotificationDetails platformChannelSpecifics =
-// NotificationDetails(android: androidPlatformChannelSpecifics);
-//
-// await flutterLocalNotificationsPlugin.show(
-//   notification.hashCode,
-//   notification.title,
-//   notification.body,
-//   platformChannelSpecifics,
-//   payload: jsonEncode(data),
-// );
-
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp(); // Ensure Firebase is initialized
   print("🔔 Background/Killed Notification Received!");
@@ -190,9 +169,6 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
   String title = message.notification?.title ?? "Jaggus Alert";
   String body = message.notification?.body ?? "Custom notification sound is playing...";
-
-  // Start foreground service to continuously play tone
-  ForegroundService.startService(title, body);
 }
 
 

@@ -20,32 +20,25 @@ class _NoOrderFoundOrderHistoryState extends State<NoOrderFoundOrderHistory> {
   Widget build(BuildContext context) {
     mainHeight = MediaQuery.of(context).size.height;
     mainWidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(top: 100, left: 30, right: 15),
-        child: Center(
-          child: Column(
-            children: [
-              CircleAvatar(
-                backgroundColor: Colors.white10,
-                child: Image(
-                  image: AssetImage(widget.imgUrl),
-                ),
-                radius: mainWidth / 4,
+    return  Center(
+      child: SingleChildScrollView( // Allows content to scroll when the keyboard appears
+        child: Column(
+          mainAxisSize: MainAxisSize.min, // Prevents unnecessary height expansion
+          children: [
+            CircleAvatar(
+              backgroundColor: Colors.white10,
+              child: Image(
+                image: AssetImage(widget.imgUrl),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                " ${widget.message} " + "FOUND".tr,
-                style:
-                    TextStyle(fontSize: FontSize.xLarge, color: Colors.black87),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-            ],
-          ),
+              radius: mainWidth / 4,
+            ),
+            SizedBox(height: 20),
+            Text(
+              " ${widget.message} " + "FOUND".tr,
+              style: TextStyle(fontSize: FontSize.xLarge, color: Colors.black87),
+            ),
+            SizedBox(height: 30),
+          ],
         ),
       ),
     );

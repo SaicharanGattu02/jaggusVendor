@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodbank_marchantise_app/models/profile.dart';
 import 'package:foodbank_marchantise_app/utils/font_size.dart';
@@ -9,7 +10,6 @@ import 'package:shimmer/shimmer.dart';
 
 class MyRestaurant extends StatelessWidget {
   final Restaurant? restaurant;
-
   MyRestaurant(this.restaurant, {Key? key}) : super(key: key);
 
   @override
@@ -193,6 +193,44 @@ class MyRestaurant extends StatelessWidget {
                           child: Text(
                             '${restaurant!.description}',
                             style: TextStyle(color: Colors.grey),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Row(
+                      children: [
+                        Text(
+                          "Delivery : ",
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500
+                          ),
+                        ),
+                        Transform.scale(
+                          scale: 0.8,
+                          child: CupertinoSwitch(
+                            inactiveTrackColor: Colors.white.withOpacity(0.5),
+                            value: true, // Boolean value from your controller
+                            onChanged: (value) {},
+                          ),
+                        ),
+                        Spacer(),
+                        Text(
+                          "Pickup : ",
+                          style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500
+                          ),
+                        ),
+                        Transform.scale(
+                          scale: 0.8,
+                          child: CupertinoSwitch(
+                            inactiveTrackColor: Colors.white.withOpacity(0.5),
+                            value: true, // Boolean value from your controller
+                            onChanged: (value) {},
                           ),
                         ),
                       ],

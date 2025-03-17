@@ -233,7 +233,7 @@ class _OrdersState extends State<Orders> {
                                                                       .orderType ==
                                                                   1
                                                               ? Text(
-                                                                  'PROCESS'.tr,
+                                                                  'Ready',
                                                                   style: TextStyle(
                                                                       color: Colors
                                                                           .white,
@@ -242,7 +242,7 @@ class _OrdersState extends State<Orders> {
                                                                               .bold),
                                                                 )
                                                               : Text(
-                                                                  'COMPLETED'
+                                                                  'Hand Over'
                                                                       .tr,
                                                                   style: TextStyle(
                                                                       color: Colors

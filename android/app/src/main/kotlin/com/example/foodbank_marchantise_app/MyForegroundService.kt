@@ -27,7 +27,6 @@ class MyForegroundService : Service() {
             stopSelf()
             return START_NOT_STICKY
         }
-
         val title = intent?.getStringExtra("title") ?: "Jaggus Alert"
         val body = intent?.getStringExtra("body") ?: "Custom notification sound is playing..."
 

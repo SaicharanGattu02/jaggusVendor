@@ -14,6 +14,7 @@ class OrderListController extends GetxController {
   int? len;
   bool loader = true;
   var orderId;
+  bool isSwitchOn = false;
 
   @override
   void onInit() {
@@ -38,6 +39,7 @@ class OrderListController extends GetxController {
         var orderListData = RestaurantOrder.fromJson(jsonResponse);
         orderList = <Order>[];
         orderList.addAll(orderListData.data!);
+        isSwitchOn=orderListData.activeStatus??false;
         filteredOrderList = List.from(orderList); // Initially, show all
         loader = false;
         Future.delayed(Duration(milliseconds: 10), () {
@@ -52,19 +54,35 @@ class OrderListController extends GetxController {
     });
   }
 
+  Future<void> getStoreStatus() async {
+    try {
+      final response = await server.getRequest(endPoint: APIList.storeStatus);
 
-  // Method to filter orders based on orderType
-  void filterOrders(int orderType) {
-    if (orderType == 0) {
-      // Show all orders
-      filteredOrderList = List.from(orderList);
-    } else {
-      // Filter based on orderType (1 = Delivery, 2 = Pickup)
-      filteredOrderList = orderList.where((order) => order.orderType == orderType).toList();
+      if (response != null && response.statusCode == 200) {
+        final jsonResponse = json.decode(response.body);
+
+        if (jsonResponse['status'] == true) {
+          isSwitchOn = !isSwitchOn; // 🔹 Toggle the switch state
+          update(); // 🔹 Ensures UI updates
+        }
+      } else {
+        print("Failed to fetch store status");
+      }
+    } catch (error) {
+      print("Error fetching store status: $error");
     }
-    update(); // Refresh UI
   }
 
+
+  void filterOrders(int orderType, {String searchQuery = ''}) {
+    filteredOrderList = orderList.where((order) {
+      bool matchesOrderType = orderType == 0 || order.orderType == orderType;
+      bool matchesSearchQuery = searchQuery.isEmpty || order.orderCode?.toLowerCase().contains(searchQuery.toLowerCase()) == true;
+      return matchesOrderType && matchesSearchQuery;
+    }).toList();
+
+    update(); // Refresh UI
+  }
 
 
   changeStatus(status, id) async {

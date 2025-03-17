@@ -1,4 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodbank_marchantise_app/controllers/global-controller.dart';
 import 'package:foodbank_marchantise_app/controllers/notification_order_controller.dart';
@@ -21,12 +22,14 @@ class Home_Page extends StatefulWidget {
 class _Home_PageState extends State<Home_Page> {
   final order_Controller = Get.put(OrderListController());
   final settingController = Get.put(GlobalController());
+  final TextEditingController _searchContoller = TextEditingController();
 
   @override
   void initState() {
     order_Controller.onInit();
     if (mounted) {
-      FirebaseMessaging.instance.getInitialMessage()
+      FirebaseMessaging.instance
+          .getInitialMessage()
           .then((RemoteMessage? message) {});
       FirebaseMessaging.onMessage.listen((RemoteMessage message) {
         order_Controller.onInit();
@@ -78,7 +81,8 @@ class _Home_PageState extends State<Home_Page> {
     order_Controller.onInit();
     await Future.delayed(new Duration(seconds: 3));
   }
-  int selectedIndex=0;
+
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     SizeConfig sizeConfig = SizeConfig();
@@ -102,60 +106,140 @@ class _Home_PageState extends State<Home_Page> {
                             fontWeight: FontWeight.bold,
                             fontSize: 25),
                       ),
+                actions: [
+                  GetBuilder<OrderListController>(
+                    builder: (controller) {
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: CupertinoSwitch(
+                          inactiveTrackColor: Colors.white.withOpacity(0.5),
+                          value: controller.isSwitchOn, // Boolean value from your controller
+                          onChanged: (value) {
+                            controller.getStoreStatus(); // Function to update state
+                          },
+                        ),
+                      );
+                    },
+                  ),
+                ],
               ),
-              body: RefreshIndicator(
-                onRefresh: _refresh,
-                child: orders.filteredOrderList.length > 0
-                    ? Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: selectedIndex == 1 ? ThemeColors.baseThemeColor : Colors.white,
-                                foregroundColor: selectedIndex == 1 ? Colors.white : ThemeColors.baseThemeColor,
-                                side: BorderSide(color: ThemeColors.baseThemeColor, width: 2),
+                body: RefreshIndicator(
+                  onRefresh: _refresh,
+                  child:  Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Expanded(
+                                    child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        elevation: 0,
+                                        backgroundColor: selectedIndex == 1
+                                            ? ThemeColors.baseThemeColor
+                                            : Colors.white,
+                                        foregroundColor: selectedIndex == 1
+                                            ? Colors.white
+                                            : ThemeColors.baseThemeColor,
+                                        side: BorderSide(
+                                            color: ThemeColors.baseThemeColor,
+                                            width: 1),
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          selectedIndex = 1;
+                                        });
+                                        order_Controller.filterOrders(1);
+                                      },
+                                      child: Text("Delivery"),
+                                    ),
+                                  ),
+                                  SizedBox(width: 10),
+                                  Expanded(
+                                    child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        elevation: 0,
+                                        backgroundColor: selectedIndex == 2
+                                            ? ThemeColors.baseThemeColor
+                                            : Colors.white,
+                                        foregroundColor: selectedIndex == 2
+                                            ? Colors.white
+                                            : ThemeColors.baseThemeColor,
+                                        side: BorderSide(
+                                            color: ThemeColors.baseThemeColor,
+                                            width: 1),
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          selectedIndex = 2;
+                                        });
+                                        order_Controller.filterOrders(2);
+                                      },
+                                      child: Text("Pickup"),
+                                    ),
+                                  )
+                                ],
                               ),
-                              onPressed: () {
-                                setState(() {
-                                  selectedIndex=1;
-                                });
-                                order_Controller.filterOrders(1);
-                              },
-                              child: Text("Delivery"),
                             ),
-                          ),
-                          SizedBox(width: 10),
-                          Expanded(
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: selectedIndex == 2 ? ThemeColors.baseThemeColor : Colors.white,
-                                foregroundColor: selectedIndex == 2 ? Colors.white : ThemeColors.baseThemeColor,
-                                side: BorderSide(color: ThemeColors.baseThemeColor, width: 2),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 8),
+                              child: TextFormField(
+                                controller: _searchContoller,
+                                keyboardType: TextInputType.text,
+                                cursorColor: Colors.black,
+                                onChanged: (query){
+                                  order_Controller.filterOrders(selectedIndex, searchQuery: query);
+                                },
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: 0, horizontal: 10),
+                                  hintText: "Search Orders",
+                                  hintStyle: TextStyle(
+                                    overflow: TextOverflow.ellipsis,
+                                    fontSize: 14,
+                                    letterSpacing: 0,
+                                    height: 19.36 / 14,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(7),
+                                    borderSide: BorderSide(
+                                        width: 1, color: ThemeColors.baseThemeColor.withOpacity(0.5)),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(7),
+                                    borderSide:  BorderSide(
+                                        width: 1,  color: ThemeColors.baseThemeColor.withOpacity(0.5)),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(7),
+                                    borderSide: BorderSide(
+                                        width: 1,  color: ThemeColors.baseThemeColor.withOpacity(0.5)),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(7),
+                                    borderSide: BorderSide(
+                                        width: 1,  color: ThemeColors.baseThemeColor.withOpacity(0.5)),
+                                  ),
+                                ),
+                                textAlignVertical: TextAlignVertical.center,
                               ),
-                              onPressed: () {
-                                setState(() {
-                                  selectedIndex=2;
-                                });
-                                order_Controller.filterOrders(2);
-                              },
-                              child: Text("Pickup"),
                             ),
-                          )
-                        ],
-                      ),
-                    ),
-                    Orders(),
-                  ],
-                )
+                            Expanded(  // Prevents overflow
+                              child: orders.filteredOrderList.isNotEmpty
+                                  ? Orders()
+                                  : NoOrderFoundOrderHistory(
+                                      "NO_ORDER".tr, Images.noOrderFound),
+                            ),
+                          ],
+                        )
 
-                    : NoOrderFoundOrderHistory(
-                        "NO_ORDER".tr, Images.noOrderFound),
-              )),
+                )
+      ),
     );
   }
 }

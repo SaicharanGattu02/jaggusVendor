@@ -36,16 +36,11 @@ class _LocationTrackingState extends State<LocationTracking> {
   @override
   void initState() {
     super.initState();
-
     location = Location();
-
     polylinePoints = PolylinePoints();
-
     subscription = location!.onLocationChanged.listen((clocation) {
       currentLocation = clocation;
-
       print("..................................................$clocation");
-
       updatePinsOnMap();
     });
 

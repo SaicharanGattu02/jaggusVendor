@@ -1,34 +1,51 @@
 class RestaurantOrder {
+  int? _status;
+  bool? _activeStatus;
+  List<Order>? _data;
+
   RestaurantOrder({
     int? status,
+    bool? activeStatus,
     List<Order>? data,
   }) {
     _status = status;
+    _activeStatus = activeStatus;
     _data = data;
   }
 
   RestaurantOrder.fromJson(dynamic json) {
     _status = json['status'];
-    if (json['data'] != null) {
-      _data = [];
-      json['data'].forEach((v) {
-        _data?.add(Order.fromJson(v));
-      });
-    }
+    _activeStatus = json['active_status'];
+    _data = json['data'] != null
+        ? List<Order>.from(json['data'].map((v) => Order.fromJson(v)))
+        : [];
   }
-  int? _status;
-  List<Order>? _data;
 
   int? get status => _status;
+  bool? get activeStatus => _activeStatus;
   List<Order>? get data => _data;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['status'] = _status;
+    map['active_status'] = _activeStatus;
     if (_data != null) {
       map['data'] = _data?.map((v) => v.toJson()).toList();
     }
     return map;
+  }
+
+  // Copy method for modifying instances
+  RestaurantOrder copyWith({
+    int? status,
+    bool? activeStatus,
+    List<Order>? data,
+  }) {
+    return RestaurantOrder(
+      status: status ?? _status,
+      activeStatus: activeStatus ?? _activeStatus,
+      data: data ?? _data,
+    );
   }
 }
 
