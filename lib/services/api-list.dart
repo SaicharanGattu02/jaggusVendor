@@ -31,4 +31,6 @@ class APIList {
   static String? menuItems = "restaurant-menuItems";
   static String? menuItemsStatus = "restaurant-menuItems-update";
   static String? storeStatus = "toggle";
+  static String? pickupStatus = "toggle_pickup";
+  static String? deliveryStatus = "toggle_delivery";
 }

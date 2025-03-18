@@ -373,7 +373,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                               ),
                                               onTap: () {
                                                 Get.to(() => MyRestaurant(
-                                                    profile.restaurant));
+                                                    profile.restaurant!.id.toString()));
                                               },
                                             )
                                           : Container(),
